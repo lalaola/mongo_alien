@@ -24,9 +24,15 @@ router.get('/:id', async(req,res) => {
 
 router.post('/', async(req,res) => {
     const alien = new Alien({
-        name: req.body.name,
-        tech: req.body.tech,
-        sub: req.body.sub
+        title: req.body.title,
+        company: req.body.company,
+        type: req.body.type,
+        url: req.body.url,
+        location: req.body.location,
+        description: req.body.description,
+        company_url: req.body.company_url,
+        createdAt: req.body.createdAt,
+        updatedAt: req.body.updatedAt
     })
 
     try{

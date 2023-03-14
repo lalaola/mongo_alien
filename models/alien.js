@@ -3,20 +3,38 @@ const mongoose = require('mongoose')
 
 const alienSchema = new mongoose.Schema({
 
-    name: {
+    title: {
         type: String,
         required: true
     },
-    tech: {
+    company: {
         type: String,
         required: true
     },
-    sub: {
-        type: Boolean,
-        required: true,
-        default: false
-    }
+    type: {
+        type: String,
+        required: true
+    },
+    url: {
+        type: String,
+        required: true
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    company_url: {
+        type: String,
+        required: true
+    },
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now }
+
 
 })
 
-module.exports = mongoose.model('Alien',alienSchema)
+module.exports = mongoose.model('Product', alienSchema)
