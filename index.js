@@ -1,5 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
+
 const url = 'mongodb+srv://islahola:ASb2L6YYZY8z8o6k@cluster0.pmzcmix.mongodb.net/?retryWrites=true&w=majority'
 
 // ASb2L6YYZY8z8o6k
@@ -15,6 +17,7 @@ con.on('open', () => {
 })
 
 app.use(express.json())
+app.use(cors());
 
 const alienRouter = require('./routes/aliens')
 app.use('/aliens',alienRouter)
