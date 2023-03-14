@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const url = 'mongodb+srv://islahola:ASb2L6YYZY8z8o6k@cluster0.pmzcmix.mongodb.net/?retryWrites=true&w=majority'
 
 // ASb2L6YYZY8z8o6k
+const PORT = process.env.PORT || 4000
 
 const app = express()
 
@@ -18,6 +19,4 @@ app.use(express.json())
 const alienRouter = require('./routes/aliens')
 app.use('/aliens',alienRouter)
 
-app.listen(9000, () => {
-    console.log('Server started')
-})
+app.listen(PORT, () => console.log(`Baru ya listening on port ${PORT}`))
